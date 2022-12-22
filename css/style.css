@@ -1,17 +1,43 @@
 
+html{
+   /* font-size: 16px; /*Default*/
+   font-size: 62.5%; /*Reset para REMS - 62.5% = 10px de 16px */
+}
+
+/*Fuentes*/
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem; /*1.6rem = 16px*/
+}
+
 /* Estilos Globales (Se van a reutilizar) */
 
 .contenedor{
-    max-width: 1200px; /* Esto va hacer que se tome todo el espacio disponible, mientras no sobrepase los 1200px*/
+    max-width: 120rem;/* 120rem = 1200px /* Esto va hacer que se tome todo el espacio disponible, mientras no sobrepase los 1200px*/
     /*margin-left: auto;
       margin-right: auto; El tamaño de los margin tanto de left como right sera automatico y a eso se lo va a centrar
       margin: 0 auto 0 auto; /* Se puede escribir tambien de esta manera, son 4 puntos en sentido horario 12:00hs = 0; 03:00hs = auto; 06:00hs = 0; 09:00hs = auto*/
     margin: 0 auto; /*Tambien se puede escribir de esta forma que queda mas compacto */
     /*margin se utiliza para centrar elementos dejando espacio en las orillas*/
-
 }
 
+ /*Sistema de tamaños de fuentes, siempre crearlas al principio del css */
+h1{
+    font-size: 3.8rem; /*3.8rem = 38px*/
+}
 
+h2{
+    font-size: 3.4rem; /*3.4rem = 34px*/
+}
+
+h3{
+    font-size: 3rem; /*3rem = 30px*/
+}
+
+h4{ 
+    font-size: 2.6rem; /*2.6rem = 26px*/
+}
 /* Header */
 
 .site-header.inicio{
@@ -19,16 +45,31 @@
     background-position: center center; /* Posicion de la imagen, al centro */
     background-size: cover; /* Esta propiedad va a forzar que tome todo el espacio disponible, tanto la altura como el ancho, pero siempre tomando como referencia las proporciones */
     height: 100vh; /* Maximo va a medir toda la pantalla, segun el dispositivo */
-    min-height: 600px; /* Minimo va a medir 600px */
+    min-height: 60rem; /*60rem = 600px /* Minimo va a medir 600px */
 
+}
+
+.contenido-header{
+    height: 100%;
+    display: flex;
+    flex-direction: column; /*La direccion va de arriba hacia abajo, solo afecta al primer nivel de hijos de cotenido de header // class="Barra" y H1*/
+    justify-content: space-between;
+
+}
+
+.contenido-header h1{
+    color: white;
+    padding-bottom: 2rem; /*2rem = 20px, padding es el espacio hacia adentro del elemento*/
+    max-width: 60rem; /*60rem = 600px*/
+    line-height: 2;
 }
 
 .barra {
     display: flex;
-    justify-content: space-between; /*Posiciona el elemento con un espacio entre los dos*/
-    padding-top: 30px; /*padding-top: Es el espacio hacia adentro del elemento*/
+    justify-content: space-between; /*Posiciona el elemento con un espacio entre los dos*/ /*Alinea contenido horizontalmente*/ 
+    padding-top: 3rem; /*3rem = 30px /*padding-top: Es el espacio hacia adentro del elemento*/
     /*margin-top: 30px; margin-top: Es la separacion con otro elemento hacia afuera*/
-    align-items: center; /*Esto alineara el logo como los enlaces*/
+    align-items: center; /*Esto alineara el logo como los enlaces*/ /*Alinea contenido verticalmente*/
 }
 
 /*Navegacion*/
@@ -36,8 +77,8 @@
 .navegacion a{
     color: white;
     text-decoration: none; /*Elimina las lineas que estan debajo de los enlaces*/ 
-    font-size: 18px;
-    margin-right: 20px;    
+    font-size: 1.8rem; /*1.8 rem = 18px*/
+    margin-right: 2rem; /*2 rem = 20px*/   
 
 }
 
@@ -47,9 +88,3 @@
 
 /*Escribiendo .navegacion a, lo que se hace que al padre(nav) e hijo(a), se le aplica lo mismo */
 
-
-/*Fuentes*/
-
-body{
-    font-family: 'Lato', sans-serif;
-}
