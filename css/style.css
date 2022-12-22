@@ -1,7 +1,11 @@
-
 html{
+    box-sizing: border-box;
    /* font-size: 16px; /*Default*/
    font-size: 62.5%; /*Reset para REMS - 62.5% = 10px de 16px */
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
 }
 
 /*Fuentes*/
@@ -9,9 +13,14 @@ html{
 body{
     font-family: 'Lato', sans-serif;
     font-size: 1.6rem; /*1.6rem = 16px*/
+    line-height: 2;
 }
 
-/* Estilos Globales (Se van a reutilizar) */
+/* Estilos Globales (Se van a reutilizar siempre como las utilidades) */
+
+img{ 
+    max-width: 100%; /*Esto hara que todas las imagenes sean responsive*/
+}
 
 .contenedor{
     max-width: 120rem;/* 120rem = 1200px /* Esto va hacer que se tome todo el espacio disponible, mientras no sobrepase los 1200px*/
@@ -23,6 +32,9 @@ body{
 }
 
  /*Sistema de tamaños de fuentes, siempre crearlas al principio del css */
+
+/*p font-weight:400
+  H1 font-weight:700*/
 h1{
     font-size: 3.8rem; /*3.8rem = 38px*/
 }
@@ -38,6 +50,51 @@ h3{
 h4{ 
     font-size: 2.6rem; /*2.6rem = 26px*/
 }
+
+/*Utilidades*/
+
+.seccion{
+    margin-top: 2rem; /*2rem = 20px*/
+    margin-bottom: 2rem; /*2rem = 20px*/
+}
+
+/*Esta parte la creamos para nosotros y se puede reutilizar*/
+
+.fw-300{
+        font-weight: 300; /*Esta propiedad hace la letra mas fina, por default la letra de google fonts estaba en 700*/   
+
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.d-block{
+    display: block!important; /*!important significa que se va a ejecutar esto sin importar si debajo hay algo que los subscriba*/
+}
+
+/*Botones*/
+
+.boton{ /*clase padre, propiedades para todos los botones*/
+    color: #F5F5F5;
+    font-weight: 700; /*letras mas gruesas*/
+    text-decoration: none; /*sin decoración*/
+    font-size: 1.8rem; /*1.8rem = 18px*//*letras mas grandes*/
+    padding: 1rem 3rem; /*1rem = 10px y 3rem = 30px*//*1rem arriba, 3rem izquierda y 3rem derecha*/
+    margin-top: 3rem; /*3rem = 30px*/
+    display: inline-block; /*display:inline-block, se le puede aplicar margin y anchos, pero no va a tomar todo el espacio disponible como si fuera un display:block*/
+    /*Los enlaces e imagenes son display: inline, si se el quiere dar un ancho o padding hay que usar display:block o display:inline-block*/
+    text-align: center;
+}
+
+.boton-amarillo{
+    background-color: #a3f01f;
+}
+.boton-verde{ /*clase hijo*/
+    background-color: #37b302;
+    
+}
+
 /* Header */
 
 .site-header.inicio{
@@ -88,3 +145,64 @@ h4{
 
 /*Escribiendo .navegacion a, lo que se hace que al padre(nav) e hijo(a), se le aplica lo mismo */
 
+/*Iconos nosotros*/
+
+.iconos-nosotros{  /*Padre de todos los iconos*/
+    display: flex;
+    justify-content: space-between; /*Esto se convina con flex-basis*/
+
+}
+
+.icono{
+    flex-basis: calc(33.3% - 1rem); /*33.3 menos 1 rem(10px) // Cada elemento va a medir 33% // Siempre que se usa flexbox hay que usar flex-basis */
+    text-align: center; /*Alinea contenido al centro*/
+
+}
+
+.icono h3{ /*padre icono, hijo h3*/
+    text-transform: uppercase; /*Pasa el texto de minusculas a todo con mayusculas*/
+
+}
+
+  /*Anuncios*//*Pasos para usar flexbox*/
+
+.contenedor-anuncios{
+    display: flex; /*Paso 1*/
+    justify-content: space-between; /*Paso 3*/
+}
+
+.anuncio {
+    flex-basis: calc(33.3% - 1rem); /*Paso 2*/
+    /*border-style: solid; /*Paso 4*/
+    /*border-color: #B5B5B5 ; /*Paso 5*/
+    /*border-width: 1px; /*Paso 6*/
+
+    /*este estilo de border permite tener style, color y width, en uno solo*/
+    border: 1px solid #B5B5B5; /*Pasos 4,5 y 6*/
+    background-color: #F5F5F5;
+}
+
+.contenido-anuncio{
+    /*padding-top: 2rem;*/
+    /*padding-right: 2rem;*/
+    /*padding-bottom: 2rem;*/
+    /*padding-left: 2rem;*/
+
+    /*Tener escrito lo de arriba es lo mismo que escribir lo que esta debajo, cuando se necesita que de cada lado tenga la misma cantidad*/
+    padding: 2rem; /*2rem = 20px*//*este padding aplica 2rem en todas las direcciones*/
+
+}
+
+.contenido-anuncio h3, .contenido-anuncio p{ /*elimina el espacio entre la img,h3 y el texto*/
+    margin: 0;
+}
+
+.precio{
+    color: #71B100;
+    font-weight: 700; /*Por default esta en 400*/
+}
+
+.ver-todo{
+    display: flex;
+    justify-content: flex-end;
+}
