@@ -88,7 +88,7 @@ h4{
 }
 
 .boton-amarillo{
-    background-color: #a3f01f;
+    background-color: #d3d92a;
 }
 .boton-verde{ /*clase hijo*/
     background-color: #37b302;
@@ -137,6 +137,10 @@ h4{
     font-size: 1.8rem; /*1.8 rem = 18px*/
     margin-right: 2rem; /*2 rem = 20px*/   
 
+}
+
+.navegacion a:hover{ /*Pseudoclases (selectores)*/
+    color: #71B100
 }
 
 .navegacion a:last-of-type{ /*Esto es un pseudo selector, que permite seleccionar el ultimo elemento y le quita la separacion o margin*/
@@ -202,7 +206,154 @@ h4{
     font-weight: 700; /*Por default esta en 400*/
 }
 
+.iconos-caracteristicas{
+    list-style: none; /*Elimina viñetas*/
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.iconos-caracteristicas li{
+    display: flex;
+
+} 
+
+.iconos-caracteristicas li img{ /*Agregar separacion entre los iconos y los numeros*/
+    margin-right: 2rem; /*2rem = 20px*/
+}
+
 .ver-todo{
     display: flex;
     justify-content: flex-end;
+}
+
+/*Contacto Home*/
+
+.imagen-contacto{ /*Aca la imagen se expande*/
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center; /*Hace que la imagen quede centrada*/
+    background-size: cover; 
+    height: 40rem; /*40rem = 400px*/
+    display: flex;
+    align-items: center;
+
+}
+
+.contenido-contacto{ /*Aca centra la imagen*/
+    flex: 1; /*flex: 1, significa factor de crecimiento, toma 1000px y lo divide entre la cantidad de elementos,
+             en este caso seria 1000px / 1 elemento = Asigna el tamaño de 1000px al elemento*/
+             color: #ffffff;
+}
+
+.contenido-contacto p{ 
+    font-size: 1.8rem; /*1.8rem = 18px*/
+}
+
+/*Seccion inferior*/
+
+.seccion-inferior{ 
+    display: flex; /*Separa a la mitad blog y testimoniales*/
+    justify-content: space-between; /*Cuando se hacen grid o se posiciona un elemento junto a otro, hay que utilizar estos dos elementos*/
+
+    
+}
+
+.seccion-inferior .blog{
+    flex-basis: 60%;/*Blog tomara 60%*/
+}
+
+.seccion-inferior .testimoniales{
+    flex-basis: calc(40% - 2rem); /*Testimoniales tomara 40% menos 2rem, 2rem = 20px*/ 
+}
+
+.entrada-blog{
+    display: flex; /*posiciona los elementos*/
+    justify-content: space-between;
+    margin-bottom: 2rem; /*2rem = 20px*/
+}
+.entrada-blog :last-of-type{ /*Elimina la franga naranja en la parte inferior*/
+    margin-bottom: 0;
+}
+
+.entrada-blog .imagen{
+    flex-basis: 40%;
+}
+
+.entrada-blog .texto-entrada{
+    flex-basis: calc(60% - 3rem); /*3rem = 30px*/
+}
+
+.texto-entrada h4{
+    margin: 0;
+    line-height: 1.4;
+}
+
+.texto-entrada a{
+    color: #000000;
+    text-decoration: none;
+}
+
+.texto-entrada h4::after{ /*Pseudoelementos, crea un elemento despues del h4*/
+    content: "";
+    display: block;
+    width: 15rem; /*15rem = 150px*/
+    height: .5rem; /*.5rem = 5px*/
+    background-color: #71B100;
+    margin-top: 1rem; /*1rem = 10px */
+} 
+
+.texto-entrada span{
+    color: #d3d92a; ;
+}
+
+/*Testimoniales*/
+
+.testimonial{
+    background-color: #71B100;
+    font-size: 2rem; /*2rem=24px*/
+    padding: 2rem;/*2rem=20px,espaciohaciaadentro*/
+    color: #ffffff;
+    border-radius: 2rem; /*2rem = 20px, aplicara 2rem en todas las direcciones*/
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+
+blockquote::before{
+    content: "";
+    background-image: url(../img/comilla.svg);
+    width: 4rem; /*4rem = 40px*/
+    height: 4rem; /*4rem = 40px*/
+    position: absolute; /*Posicion absoluta en el hijo*/
+    left: -2rem; /*posicion de la comilla, con respecto al texto*/  
+}
+
+.testimonial blockquote{ 
+    position: relative; /*Posicion relativa en el padre*/ 
+    padding-left: 5rem; /*5rem = 50px*/
+    font-weight: 300;
+}
+
+.testimonial p{
+    text-align: right;
+}
+
+/*Footer*/
+
+.site-footer{
+    background-color: #333333;
+    margin: 0;
+}
+
+.contenedor-footer{
+    padding: 3rem 0; /*3rem = 30px, 3 rem, 0 rem, 3rem, 0rem */
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright{
+    margin: 0;
+    color: #ffffff;
 }
