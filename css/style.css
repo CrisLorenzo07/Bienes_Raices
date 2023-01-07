@@ -415,3 +415,11 @@ blockquote::before{
 }
 
 /**Blog**/
+
+/*Usa los mismos estilos de la parte de blog que esta en la pagina index*/
+
+/**Contacto**/
+
+label{
+    display: block; /*tomaran todo el espacio disponible*/
+}
